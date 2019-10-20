@@ -109,6 +109,8 @@ def standard_basis():
                 ls.append(1)
             else:
                 ls.append(0)
+            j+=1
+        i+=1
         print(np.array(ls))
 dim=int(input('Enter the number of dimensions:'))
 standard_basis(dim)
