@@ -119,4 +119,3 @@ def construct_density_matrix_single(alpha,beta):
 
 #checking the function
 print(construct_density_matrix_single(1/2**0.5,1/2**0.5)
-   
