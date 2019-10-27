@@ -8,7 +8,7 @@ qbit3=np.array([[1],[0]])
 
 def validity(q1,q2,q3):
        if(np.linalgnorm(q1,ord=2)==1 and (np.linalgnorm(q2,ord=2)==1 and (np.linalgnorm(q3,ord=2)==1):
-          	 print("valid qubits)
+          	 print("valid qubits")
        else:
 	print("enter valid qubits")
 	exit()
