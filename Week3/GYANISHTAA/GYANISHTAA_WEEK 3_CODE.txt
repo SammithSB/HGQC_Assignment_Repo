@@ -1,0 +1,82 @@
+import numpy as np
+import math
+f=np.array([[1],[0]])
+g=np.array([[0],[1]])
+
+def pauli_X(n):
+    if n==1:
+        print('X|',n,'>','=','|0>',f)
+    elif n==0:
+        print('X|',n,'>','=','|1>',g)
+
+
+def pauli_Y(n):
+    if n==1:
+        print('Y|',n,'>','=',-f*1j)
+    elif n==0:
+        print('Y|',n,'>','=',g*1j)
+
+
+def pauli_Z(n):
+    if n==1:
+        print('Y|',n,'>','=',-g)
+    elif n==0:
+        print('Y|',n,'>','=',f)
+
+def hadamard_h(n):
+    if n==1:
+        print('H|',n,'>','=','|->')
+    elif n==0:
+        print('H|',n,'>','=','|+>')
+    elif n=='+':
+        print('H|',n,'>','=','|0>',f)
+    elif n=='-':
+        print('H|',n,'>','=','|1>',g)
+
+def CNOT():
+  x=int(input('enter control qubit:'))
+  y=int(input('enter target qubit:'))
+  if y==0:
+      print(np.array([[x],[y]]))
+  elif y==1 and x==0:
+      k=1
+      print(np.array([[k],[y]]))
+  elif y==1 and x==1:
+      k=0
+      print(np.array([[k],[y]]))
+
+def CCNOT():
+  x=int(input('enter 1st control qubit:'))
+  y=int(input('enter 2nd control qubit:'))
+  z=int(input('enter target qubit:'))
+  if z==0 or y==0:
+     print(np.array([[x],[y],[z]]))
+  elif z==1 and y==1 and x==1:
+     print(np.array([[0],[y],[z]]))
+  elif z==1 and y==1 and x==0:
+     print(np.array([[1],[y],[z]]))
+
+def swap():
+  x=int(input('enter 1st qubit:'))
+  y=int(input('enter 2nd qubit:'))
+  if x in range(0,2):
+      if y in range(0,2):
+       c=x
+       x=y
+       y=c
+       print(x,y)
+
+def chk_gates():
+    x=int(input('enter a1'))
+    y=int(input('enter a2'))
+    z=int(input('enter a3'))
+    u=int(input('enter a4'))
+    h=np.array([[x,y],[z,u]])
+    c=h.conjugate().transpose()
+    i=np.array([[1,0],[0,1]])
+    k=np.multiply(h,c)
+    if k is i:
+        print('valid')
+    else:
+        print('invalid')
+
