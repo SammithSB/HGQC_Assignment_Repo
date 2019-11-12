@@ -84,7 +84,7 @@ def measure_single(qubit1,generalstate):#the arguments are array with pre-mutlip
 
 #checking the function
 qubit_1 = np.array([[0.6],[0.8]])
-qubit_2 = np.array([[1/2**5],[1/2**5]])
+qubit_2 = np.array([[1/2**0.5],[1/2**0.5]])
 print(measure_single(qubit_1,qubit_2))
 
 #measure multiple qubit
@@ -108,3 +108,14 @@ def measure_multiple(qubits):#the arugment are array
 #checking the function
 qubit_1 = np.array([[0],[0],[1],[0]])
 print(measure_multiple(qubit_1))
+
+#density matrix
+def construct_density_matrix_single(alpha,beta):
+    ket_qubit = intialise_qubit_to_ket(alpha,beta)
+    bra_qubit = intialise_qubit_to_bra(alpha,beta)
+    #matrix multiplication
+    density_matrix = np.dot(ket_qubit,bra_qubit)
+    return density_matrix
+
+#checking the function
+print(construct_density_matrix_single(1/2**0.5,1/2**0.5)
